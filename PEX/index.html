@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaúdeMap - Localizador de Pontos de Saúde</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-heartbeat"></i> SaúdeMap</h1>
+            <p>Encontre pontos de saúde próximos a você</p>
+        </div>
+
+        <div class="emergency-banner">
+            <strong><i class="fas fa-exclamation-triangle"></i> Emergência?</strong> 
+            Ligue 192 (SAMU) ou 193 (Bombeiros)
+        </div>
+
+        <div class="search-section">
+            <form class="search-form" id="searchForm">
+                <div class="form-group">
+                    <label for="location">Localização:</label>
+                    <input type="text" id="location" placeholder="Digite seu endereço ou CEP">
+                </div>
+                <div class="form-group">
+                    <label for="radius">Raio de busca:</label>
+                    <select id="radius">
+                        <option value="5">5 km</option>
+                        <option value="10" selected>10 km</option>
+                        <option value="20">20 km</option>
+                        <option value="50">50 km</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fas fa-search"></i>
+                    Buscar
+                </button>
+                <button type="button" class="btn btn-location" id="useLocation">
+                    <i class="fas fa-location-arrow"></i>
+                    Usar minha localização
+                </button>
+            </form>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display: none;">
+            <div class="results-header">
+                <h2 id="resultsTitle">Pontos de saúde encontrados</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="hospital">Hospitais</button>
+                    <button class="filter-btn" data-filter="posto">Postos de Saúde</button>
+                    <button class="filter-btn" data-filter="farmacia">Farmácias</button>
+                    <button class="filter-btn" data-filter="clinica">Clínicas</button>
+                </div>
+            </div>
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+
+    <script type="module" src="assets/js/script.js"></script>
+</body>
+</html>
